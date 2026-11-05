@@ -1,0 +1,13 @@
+services:
+  web:
+    build: .
+    image: event-reminder
+    container_name: event-reminder-container
+    ports:
+      - "8080:8080"
+    volumes:
+      - event-data:/app/data
+
+volumes:
+  event-data:
+    name: event-reminder-data

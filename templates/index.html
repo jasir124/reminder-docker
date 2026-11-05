@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Event Reminder</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<main>
+    <h1>Event Reminder</h1>
+    <form class="event-form" method="post" action="{{ url_for('add') }}">
+        {% if error %}<p class="error" role="alert">{{ error }}</p>{% endif %}
+        <label for="name">Event Name</label>
+        <input id="name" name="name" value="{{ event.name }}" required>
+        <label for="date">Event Date</label>
+        <input id="date" name="date" type="date" value="{{ event.date }}" required>
+        <label for="description">Event Description</label>
+        <textarea id="description" name="description" rows="3" required>{{ event.description }}</textarea>
+        <button class="button add" type="submit">Add Event</button>
+    </form>
+
+    <h2>Saved Events</h2>
+    <div class="table-wrapper">
+        <table>
+            <thead>
+                <tr><th>ID</th><th>Event Name</th><th>Date</th><th>Description</th><th>Actions</th></tr>
+            </thead>
+            <tbody>
+                {% for event in events %}
+                <tr>
+                    <td>{{ event.id }}</td>
+                    <td>{{ event.name }}</td>
+                    <td>{{ event.date.split('-') | reverse | join('-') }}</td>
+                    <td class="description">{{ event.description }}</td>
+                    <td class="actions">
+                        <a class="button edit" href="{{ url_for('edit', event_id=event.id) }}">Edit</a>
+                        <form method="post" action="{{ url_for('delete', event_id=event.id) }}"
+                              onsubmit="return confirm('Delete this event?');">
+                            <button class="button delete" type="submit">Delete</button>
+                        </form>
+                    </td>
+                </tr>
+                {% else %}
+                <tr><td colspan="5">No events saved yet.</td></tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</main>
+</body>
+</html>

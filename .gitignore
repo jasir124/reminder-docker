@@ -1,0 +1,15 @@
+data/*
+!data/.gitkeep
+*.db
+*.db-*
+*.sqlite*
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.env
+.env.*
+*.pem
+*.key
+*.tmp
+*.log
