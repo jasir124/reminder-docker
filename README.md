@@ -52,10 +52,10 @@ Capture these after starting the container and save them in `screenshots/`.
 
 | File | Capture |
 | --- | --- |
-| 01-homepage.png | Homepage at localhost:8080 |
-| 02-add-event.png | Saved Events table after adding Project Demo |
-| 03-edit-event.png | Prefilled Edit Event page |
-| 04-delete-event.png | Saved Events table after confirming deletion |
+| [01-homepage.jpg](screenshots/01-homepage.jpg) | Homepage at localhost:8080 |
+| [02-add-event.jpg](screenshots/02-add-event.jpg) | Saved Events table after adding Project Demo |
+| [03-edit-event.jpg](screenshots/03-edit-event.jpg) | Prefilled Edit Event page |
+| [04-delete-event.jpg](screenshots/04-delete-event.jpg) | Saved Events table after deleting Project Demo |
 | 05-docker-image.png | Image shown by `docker image ls event-reminder` |
 | 06-docker-container.png | Running container shown by `docker ps` |
 | 07-docker-terminal.png | Terminal showing the successful build and run commands |
