@@ -62,7 +62,7 @@ Capture these after starting the container and save them in `screenshots/`.
 
 ## GitHub
 
-Repository link pending publication.
+[jasir124/reminder-docker](https://github.com/jasir124/reminder-docker)
 
 ## Conclusion
 
